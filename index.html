@@ -1,0 +1,24 @@
+<!doctype html>
+<html ng-app="tweetsApp">
+<head>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular-sanitize.js"></script>
+<script src="js/tweets.js"></script>
+</head>
+<body>
+<header>Twitter timeline</header>
+<div ng-controller="TweetController">
+  <ul>
+    <li ng-repeat="tweet in tweets">
+      <span class="username">{{tweet.user.screen_name}}</span>: <span class="tweet" ng-bind-html="tweet.expanded_text"></span>
+    </li>
+  </ul>
+<hr/>
+  ng-bind: <span class="status" ng-bind="status"></span>
+<hr/>
+  ng-bind-html: <span class="status" ng-bind-html="status"></span>
+<hr/>
+  template: <span class="status">{{status}}</span>
+</div>
+</body>
+</html>

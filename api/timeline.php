@@ -9,6 +9,7 @@ $url = 'https://api.twitter.com/1.1/statuses/home_timeline.json';
 $getfield = '?screen_name=J7mbo';
 $requestMethod = 'GET';
 $twitter = new TwitterAPIExchange($settings);
+header('Content-type: application/json; charset=utf-8');
 echo $twitter->setGetfield($getfield)
              ->buildOauth($url, $requestMethod)
              ->performRequest();
