@@ -2,7 +2,7 @@ angular.module('tweetsApp', ['ngSanitize'])
   .controller('TweetController', ['$scope', '$http', function($scope, $http) {
     $scope.status='Loading';
 
-    $http.get('api/timeline.php')
+    $http.get('api/timeline')
     .success(function(data, status, headers, config) {
       $scope.tweets = data;
 
